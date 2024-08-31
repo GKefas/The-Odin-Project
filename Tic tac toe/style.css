@@ -1,0 +1,140 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --color-primary: #4c6ef5;
+  --color-primary-darker: #364fc7;
+
+  --container-min-size: 19rem;
+  --container-ideal-size: 85vw;
+  --container-max-size: 31rem;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  font-size: 1rem;
+  font-family: 'Titillium Web', sans-serif;
+  font-weight: 500;
+  color: #333;
+  min-height: 100vh;
+  background-color: #eee;
+}
+
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+
+em {
+  font-style: italic;
+}
+
+
+.heading-primary {
+  font-size: 3rem;
+  letter-spacing: 1px;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.btn {
+  border: 0;
+  border-radius: 9px;
+  cursor: pointer;
+}
+
+
+.container {
+  padding: 1.5rem;
+  max-width: 60rem;
+  margin: 0 auto;
+}
+
+/* Header */
+
+
+.header {
+  min-height: 9rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.header__btn-container {
+  display: flex;
+  gap: 1.75rem;
+}
+
+.btn--heading {
+  background-color: var(--color-primary);
+  color: #eee;
+  font-size: 1.25rem;
+  padding: 0.25rem 1.25rem;
+  font-weight: 600;
+  transition: background-color 0.3s;
+}
+
+.btn--heading:hover,
+.btn--heading:active {
+  background-color: var(--color-primary-darker);
+}
+
+.btn--outline {
+  background-color: #eee;
+  border: 3px solid var(--color-primary);
+  color: var(--color-primary);
+}
+
+.btn--outline:hover,
+.btn--outline:active {
+  background-color: var(--color-primary);
+  color: #eee;
+}
+
+/* MAIN */
+
+.gameboard-container {
+  height: clamp(var(--container-min-size), var(--container-ideal-size), var(--container-max-size));
+  max-width: 45rem;
+  margin: 2.25rem auto 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  justify-content: center;
+}
+
+.box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3rem;
+}
+
+.left {
+  border-right: 3px solid var(--color-primary);
+}
+
+.right {
+  border-left: 3px solid var(--color-primary);
+}
+
+.top {
+  border-bottom: 3px solid var(--color-primary);
+}
+
+.bottom {
+  border-top: 3px solid var(--color-primary);
+}
