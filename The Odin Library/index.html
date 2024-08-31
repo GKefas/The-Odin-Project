@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Odin library</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300..800;1,300..800&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+  <header class="header">
+    <h1 class="heading-primary">The Odin library</h1>
+    <button class="btn btn--primary open-modal">
+      <svg class="icon header__icon-plus">
+        <use xlink:href="/sprite.svg#icon-plus"></use>
+      </svg>
+      <span>Add a book</span>
+    </button>
+  </header>
+  <main class="books__container">
+    <figure class="book" data-name="markup">
+      <h2 class="heading-secondary">Book Name</h2>
+      <ul class="book__list">
+
+        <!-- 01 -->
+        <li class="book__item">
+          <svg class="icon book__icon">
+            <use xlink:href="/sprite.svg#icon-user"></use>
+          </svg>
+          <span class="book__author">Author Name</span>
+        </li>
+
+        <!-- 02-->
+        <li class="book__item">
+          <svg class="icon book__icon">
+            <use xlink:href="/sprite.svg#icon-book-open"></use>
+          </svg>
+          <span class="book__pages"> 256</span>
+        </li>
+        <!-- 03 -->
+
+        <li class="book__item">
+          <form action="#" class="form-checkbox">
+            <label for="complete" class="from-checkbox__label">Read</label>
+            <input type="checkbox" name="complete" id="complete" class="form-checkbox__input">
+          </form>
+        </li>
+      </ul>
+      <button class="btn btn--close">
+        <svg class="icon book__icon">
+          <use xlink:href="/sprite.svg#icon-x"></use>
+        </svg>
+      </button>
+    </figure>
+
+
+  </main>
+
+  <div class="modal hidden">
+    <form action="#" class="form-book">
+      <div class="form-book__input-container">
+        <label for="book-name">Name</label>
+        <input type="text" name="book-name" id="book-name" class="form-book__input" required>
+      </div>
+      <div class="form-book__input-container">
+        <label for="book-author">Author</label>
+        <input type="text" name="book-author" id="book-author" class="form-book__input" required>
+      </div>
+      <div class="form-book__input-container">
+        <label for="book-pages">Pages</label>
+        <input type="number" name="book-pages" id="book-pages" class="form-book__input" required>
+      </div>
+      <input type="submit" class="btn btn--primary get-book" value="Add Book"></input>
+    </form>
+    <button class="btn btn--close">
+      <svg class="icon book__icon close-modal">
+        <use xlink:href="/sprite.svg#icon-x"></use>
+      </svg>
+    </button>
+  </div>
+  <div class="overlay hidden"></div>
+</body>
+
+</html>
