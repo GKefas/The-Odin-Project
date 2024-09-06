@@ -47,17 +47,20 @@ em {
   line-height: 1;
 }
 
-.btn {
-  border: 0;
-  border-radius: 9px;
-  cursor: pointer;
-}
 
 
 .container {
   padding: 1.5rem;
   max-width: 60rem;
   margin: 0 auto;
+}
+
+.btn {
+  border: 0;
+  border-radius: 9px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.3s;
 }
 
 /* Header */
@@ -83,8 +86,6 @@ em {
   color: #eee;
   font-size: 1.25rem;
   padding: 0.25rem 1.25rem;
-  font-weight: 600;
-  transition: background-color 0.3s;
 }
 
 .btn--heading:hover,
@@ -183,4 +184,68 @@ em {
 
 .scores--active {
   color: #000;
+}
+
+/* MODAL */
+
+.dialog__container {
+  min-height: 21rem;
+  margin: auto auto;
+  border: 0;
+  padding: 2.5rem;
+  background-color: #eee;
+  border-radius: 9px;
+}
+
+.dialog__container::backdrop {
+  backdrop-filter: blur(3px) brightness(0.85);
+}
+
+
+
+.dialog__form {
+  font-size: 1.5rem;
+}
+
+.dialog__label,
+.dialog__input {
+  display: block;
+}
+
+.dialog__label {
+  font-size: 1.25rem;
+}
+
+.dialog__input {
+  display: block;
+  margin-bottom: 1.25rem;
+  border: 0;
+  background-color: transparent;
+  border-bottom: 2px solid var(--color-primary);
+
+  font-weight: 600;
+  border-top-left-radius: 9px;
+  border-top-right-radius: 9px;
+}
+
+.dialog__input:not(:last-child) {
+  margin-bottom: 1.25rem;
+}
+
+.dialog__input:focus,
+.dialog__input:active {
+  outline: none;
+  background-color: #E9E9E9;
+}
+
+.dialog__btn-submit {
+  background-color: var(--color-primary);
+  color: #fff;
+  padding: 0.5rem 1.25rem;
+  width: 50%;
+  margin: 1.75rem 0 0 3.2rem;
+}
+
+.dialog__btn-submit:hover {
+  background-color: var(--color-primary-darker);
 }
