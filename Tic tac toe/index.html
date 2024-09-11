@@ -26,45 +26,47 @@
     </header>
 
     <section class="gameboard-container">
-      <div class="box top left set">
-        <div class="box__value set">O</div>
-      </div>
-
-      <div class="box top">
+      <div class="box top left" data-index="0">
         <div class="box__value set">X</div>
       </div>
 
-      <div class="box top right">
-        <div class="box__value "></div>
+      <div class="box top" data-index="1">
+        <div class="box__value">O</div>
       </div>
 
-      <div class="box left">
-        <div class="box__value "></div>
-      </div>
-
-      <div class="box">
-        <div class="box__value "></div>
-      </div>
-
-      <div class="box right">
-        <div class="box__value "></div>
-      </div>
-
-      <div class="box bottom left">
+      <div class="box top right" data-index="2">
         <div class="box__value"></div>
       </div>
 
-      <div class="box bottom">
+      <div class="box left" data-index="3">
         <div class="box__value "></div>
       </div>
 
-      <div class="box bottom right">
+      <div class="box" data-index="4">
         <div class="box__value "></div>
       </div>
+
+      <div class="box right" data-index="5">
+        <div class="box__value "></div>
+      </div>
+
+      <div class="box bottom left" data-index="6">
+        <div class="box__value"></div>
+      </div>
+
+      <div class="box bottom" data-index="7">
+        <div class="box__value "></div>
+      </div>
+
+      <div class="box bottom right" data-index="8">
+        <div class="box__value "></div>
+      </div>
+
+
     </section>
     <section class="scores-container">
       <div class="scores">
-        <div class="scores__name-and-type">
+        <div class="scores__name-and-type" data-name="George">
           <p class="scores__name">George</p>
           <p class="scores__type">(X)</p>
         </div>
@@ -95,7 +97,7 @@
       <input type="text" name="player1" id="player1" class="dialog__input" required autofocus>
       <label for="player2" class="dialog__label">Player 2</label>
       <input type="text" name="player2" id="player1" class="dialog__input" required>
-      <button type="submit" class="btn dialog__btn-submit">Play</button>
+      <button class="btn dialog__btn-submit">Play</button>
     </form>
   </dialog>
 
