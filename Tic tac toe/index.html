@@ -20,9 +20,10 @@
     <header class="header">
       <h1 class="heading-primary">The odin Toe</h1>
       <div class="header__btn-container">
-        <button class="btn btn--heading">New Game</button>
+        <button class="btn btn--heading" id="newGame">New Game</button>
         <button class="btn btn--heading btn--outline">Reset</button>
       </div>
+      <h2 class="heading-secondary winner-heading hidden"><span class="winner-name">George</span> Won 🎉</h2>
     </header>
 
     <section class="gameboard-container">
@@ -65,24 +66,24 @@
 
     </section>
     <section class="scores-container">
-      <div class="scores">
-        <div class="scores__name-and-type" data-name="George">
-          <p class="scores__name">George</p>
+      <div class="scores scores--active playerStatus">
+        <div class="scores__name-and-type ">
+          <p class="scores__name">-</p>
           <p class="scores__type">(X)</p>
         </div>
         <p class="scores__score">1</p>
       </div>
 
-      <div class="scores">
+      <div class="scores" id="tie">
         <div class="scores__name-and-type">
           <p class="scores__name">TIE</p>
         </div>
         <p class="scores__score">0</p>
       </div>
 
-      <div class="scores scores--active">
+      <div class="scores playerStatus">
         <div class="scores__name-and-type">
-          <p class="scores__name">Nick</p>
+          <p class="scores__name">-</p>
           <p class="scores__type">(O)</p>
         </div>
         <p class="scores__score">2</p>
@@ -100,7 +101,6 @@
       <button class="btn dialog__btn-submit">Play</button>
     </form>
   </dialog>
-
 </body>
 
 </html>

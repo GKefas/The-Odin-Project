@@ -44,9 +44,14 @@ em {
   font-size: 3rem;
   letter-spacing: 1px;
   font-weight: 800;
-  line-height: 1;
+  line-height: 1.2;
 }
 
+.heading-secondary {
+  font-size: 2.75rem;
+  font-weight: 600;
+  line-height: 1.2;
+}
 
 
 .container {
@@ -242,6 +247,25 @@ em {
 }
 
 
+
+
+.set {
+  animation: append-animate .3s ease-in-out;
+}
+
+.gameboard-win-state {
+  opacity: 0.25;
+}
+
+.gameboard-win-state .box {
+  cursor: default !important;
+}
+
+.hidden {
+  display: none;
+}
+
+
 /* ANIMATION TO INSERT BOX */
 
 @keyframes append-animate {
@@ -254,14 +278,10 @@ em {
   }
 
   75% {
-    transform: scale();
+    transform: scale(0.8);
   }
 
   100% {
     transform: scale(1);
   }
-}
-
-.set {
-  animation: append-animate .3s ease-in-out;
 }
