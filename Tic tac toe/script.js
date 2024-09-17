@@ -4,6 +4,7 @@ const modal = document.querySelector('.dialog__container');
 const form = document.querySelector('dialog__form');
 const confirmBtn = document.querySelector('.dialog__btn-submit');
 const newGameBtn = document.getElementById('newGame');
+const resetGameBtn = document.getElementById('resetGame');
 const playersInput = document.querySelectorAll('.dialog__input');
 
 const playersStatusEl = document.querySelectorAll('.playerStatus');
@@ -35,10 +36,9 @@ const gameBoard = function () {
   ];
 
   const clear = () => {
-    boardState.forEach((_, i) => {
-      boardState[i] = '';
-    });
-    players = [];
+    boardState.forEach((_, i) => (boardState[i] = ''));
+    scores.forEach((_, i) => (scores[i] = 0));
+    players.splice(0, 2);
     curPlayer = '';
   };
 
@@ -102,17 +102,11 @@ const insertBoxUI = function (curCell) {
   curCell.appendChild(boxValueEl);
 };
 
-const updateScoresUI = function (tie = true) {
-  if (!tie) {
-    playersStatusEl.forEach((el, i) => {
-      if (el.classList.contains('scores--active')) {
-        el.querySelector('.scores__score').textContent =
-          gameBoardStatus.scores[i];
-      }
-    });
-    return;
-  }
+const updateScoresUI = function () {
   tieEl.querySelector('.scores__score').textContent = gameBoardStatus.scores[2];
+  playersStatusEl.forEach((el, i) => {
+    el.querySelector('.scores__score').textContent = gameBoardStatus.scores[i];
+  });
 };
 
 const updateToWinState = function (tie = true) {
@@ -184,7 +178,7 @@ const gameMechanism = function (e) {
 
     gameBoardStatus.scores[index] += 1;
 
-    updateScoresUI(false);
+    updateScoresUI();
     updateToWinState(false);
     return cellsContainer.removeEventListener('click', gameMechanism);
   }
@@ -213,5 +207,11 @@ modal.addEventListener('close', getPlayersAndSetUI);
 
 cellsContainer.addEventListener('click', gameMechanism);
 newGameBtn.addEventListener('click', removeWinState);
+resetGameBtn.addEventListener('click', function (e) {
+  gameBoardStatus.clear();
+  updateScoresUI();
+  removeWinState();
+  modal.showModal();
+});
 
 const gameBoardStatus = init();
